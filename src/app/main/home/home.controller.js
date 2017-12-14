@@ -13,14 +13,13 @@
     vm.classAnimation = '';
     vm.creationDate = 1513169061597;
     vm.showToastr = showToastr;
-
+    $scope.dataMsg = '';
     initPosts();
     function initPosts(){
       //função mockada
       $http.get('https://pacific-stream-91568.herokuapp.com/user/home/3').then(
         function(resposta){
           $scope.dataHome = resposta.data.data;
-          console.log($scope.dataHome);
         }, function(resposta){
             console.log(resposta);
         });
@@ -30,10 +29,22 @@
       var data = new Date();
       var dia = data.getDate();
       var mes = data.getMonth() + 1;
+      if (mes < 10) {
+         mes = "0" + mes;
+      }
       var ano = data.getFullYear();
-      console.log([dia, mes, ano].join('/'));
-      return [dia, mes, ano].join('/');
+      var horas = new Date().getHours();
+      if (horas < 10) {
+          horas = "0" + horas;
+      }
+      var minutos = new Date().getMinutes();
+      if (minutos < 10) {
+          minutos = "0" + minutos;
+      }
+      var result = dia+"/"+mes+"/"+ano+" - "+horas + "h" + minutos;
+      return result;
     }
+    dataHoje();
   
 
     $scope.publicar = function() {
@@ -47,6 +58,7 @@
       $http.post('https://pacific-stream-91568.herokuapp.com/post/new', config).then(
         function(resposta){
           $("#text-post").val("");
+          $scope.dataMsg = resposta.data.data.message;
           initPosts();
         }, function(resposta){
             console.log(resposta);

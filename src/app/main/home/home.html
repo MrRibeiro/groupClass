@@ -1,5 +1,4 @@
 <div class="container-fluid tela-cheia">
-
   <div>
     <acme-navbar creation-date="main.creationDate"></acme-navbar>
   </div>
@@ -10,25 +9,41 @@
     </div>
 
     <div class="col-md-6">
+      <div class="col-md-12" id="">
+          <msg-servidor objeto="dataMsg"></msg-servidor>
+      </div>
       <div class="col-md-12">
-        <div class="thumbnail">
+        <div class="col-md-12 thumbnail">
             <div class="caption">
-              <textarea ng-model="text" id="text-post"></textarea>
-              <button type="submit" ng-click="publicar()" class="btn btn-primary">Publicar</button>
+              <div class="col-md-12">
+                  <span class="bg-success"><i class="fa fa-pencil" aria-hidden="true"></i><strong>Criar Publicação</strong> </span>
+              </div>
+              <div class="col-md-12">
+                <textarea ng-model="text" id="text-post" style="resize: none" cols="78" rows="5"></textarea>
+              </div>
+              <div class="col-md-12">
+                <button type="submit" style="float:right;" ng-click="publicar()" class="btn btn-primary">Publicar</button>
+              </div>
             </div>
         </div>
       </div>
-
-      <div class="col-md-12" ng-repeat="post in dataHome.posts | orderBy:'-creation'">
-        <div class="thumbnail">
-          <img class="pull-right" class="profileImage-menu" ng-src="{{ post.creator.imagePath }}">
-          <div class="caption">
-            <h3>{{post.creator.name}}</h3>
-            <p>{{post.text}}</p>
-            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+      <!-- Posts Cards -->
+      <div class="col-md-12" ng-repeat="post in dataHome.posts">
+        <div class="col-md-12 thumbnail" style="min-height: 150px !important;">
+          <img class="pull-left" class="profileImage-menu" ng-src="{{ post.creator.imagePath }}" style="
+                margin-top: 5px;
+                margin-left: 5px;
+            ">
+          <div class="row position-name-user">
+            <h4 class="position-name-user" style="margin-bottom: 0px;">{{post.creator.name}}</h4><br>
+            <h6 class="col-md-12 position-name-user" style="margin-left: 0px;padding-left: 10px;">{{post.creation | date: 'dd/MM/yyyy'}}</h6>
+          </div><br>
+          <div class="row col-md-12" style="margin-left: 1%">
+              <p>{{post.text}}</p>
           </div>
         </div>
       </div>
+
     </div>
 
     <div class="col-md-3">

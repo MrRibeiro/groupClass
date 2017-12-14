@@ -8,7 +8,35 @@
             <menu-left objeto="dataHome"></menu-left>
         </div>
 
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card" style="width: 20rem;" ng-repeat="grupoCr in gruposCriados">
+                        <!-- <img class="card-img-top" src="{{}}" alt="Card image cap"> -->
+                        <div class="card-block">
+                            <h4 class="card-title">{{grupoCr.name}}</h4>
+                            <p class="card-text"><lanbel>Criador: {{grupoCr.creator.name}}</p>
+                            <p class="card-text"><lanbel>Menbros: {{grupoCr.quantityMembers ? grupoCr.quantityMembers : 0}}</p>
+                            
+                            <a href="#group" class="btn btn-primary">Ir ao Grupo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="card" style="width: 20rem;" ng-repeat="grupoPart in participate">
+                        <!-- <img class="card-img-top" src="{{}}" alt="Card image cap"> -->
+                        <div class="card-block">
+                            <h4 class="card-title">{{grupoPart.name}}</h4>
+                            <p class="card-text"><lanbel>Criador: {{grupoPart.creator.name}}</p>
+                            <p class="card-text"><lanbel>Menbros: {{grupoPart.quantityMembers ? grupoPart.quantityMembers : 0}}</p>
+
+                            <a ng-href="#group" class="btn btn-primary">Ir ao Grupo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="col-md-3">
             <menu-right objeto="dataHome.favoriteIssues"></menu-right>

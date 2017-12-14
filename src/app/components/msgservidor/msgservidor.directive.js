@@ -3,26 +3,30 @@
   
     angular
       .module('ifsocial')
-      .directive('menuRight', menuRight);
+      .directive('msgServidor', msgServidor);
   
     /** @ngInject */
-    function menuRight() {
+    function msgServidor() {
         var directive = {
             restrict: 'E',
-            templateUrl: 'app/components/menuRight/menuRight.html',
+            templateUrl: 'app/components/msgservidor/msgservidor.html',
             scope: {
                 objeto: '='
             },
-            controller: MenuRightController,
+            controller: MsgServidorController,
             controllerAs: 'vm',
             bindToController: true
         };
         return directive;
         
         /** @ngInject */
-        function MenuRightController(moment) {
+        function MsgServidorController(moment, $scope) {
             var vm = this;
-            
+
+            $scope.hidemsg = function(){
+                $("#msgsServidor").hide();
+            }
+
         }
     }
 })();

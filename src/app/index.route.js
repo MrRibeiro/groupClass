@@ -33,6 +33,15 @@
       .otherwise({
         redirectTo: '/'
       });
+    $routeProvider
+      .when('/group', {
+        templateUrl: 'app/main/my-groups/group/group.html',
+        controller: 'GroupController',
+        controllerAs: 'groups'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
   }
 
 })();

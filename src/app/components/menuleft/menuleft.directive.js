@@ -20,8 +20,17 @@
         return directive;
         
         /** @ngInject */
-        function MenuLeftController(moment) {
+        function MenuLeftController(moment, $location) {
             var vm = this;
+
+            var url = $location.url();
+            var telaAtual = url.replace("/", "");
+            console.log(telaAtual);
+            init();
+            function init(){
+                $(".menu-left").removeClass("active");
+                $("#"+telaAtual).addClass("active");
+            }
            
         }
     }

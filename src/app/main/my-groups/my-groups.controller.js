@@ -25,11 +25,12 @@
         function initGrupos(){
             $http.get('https://pacific-stream-91568.herokuapp.com/user/3/groups').then(
                 function(resposta){
-                    $scope.grupos = resposta.data;
-                    console.log($scope.grupos);
+                    $scope.gruposCriados = resposta.data.data.createdBy;
+                    $scope.participate = resposta.data.data.participate;
                 }, function(resposta){
                     console.log(resposta);
                 });
         }
+       
     }
 })();

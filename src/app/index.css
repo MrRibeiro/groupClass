@@ -7,10 +7,14 @@
 }
 
 .thumbnail {
-  height: 200px;
+  min-height: 200px;
 }
 
-.thumbnail img.pull-right {
+.thumbnail img.pull-left {
+  width: 50px;
+}
+
+.cards img.pull-left{
   width: 50px;
 }
 
@@ -58,4 +62,15 @@
 .vertical-menu a.active {
     background-color: #4CAF50;
     color: white;
+}
+
+.position-name-user {
+  margin-top: 7px;
+  float: left;
+  margin-left: 10px;
+}
+
+.img-cards {
+  margin-top: 5px;
+  margin-left: 5px;
 }
