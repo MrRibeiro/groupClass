@@ -10,10 +10,13 @@
 
         <div class="col-md-6">
             <div class="row">
+                <h1><i class="fa fa-users" aria-hidden="true"></i>Meus Grupos</h1>
+            </div><br>
+            <div class="row">
                 <div class="col-md-7">
-                    <div class="card" style="width: 20rem;" ng-repeat="grupoCr in gruposCriados">
+                    <div class="card" style="width: 20rem;border-radius:  15px;background-color: #eee;padding-top: 10px;padding-bottom: 10px;" ng-repeat="grupoCr in gruposCriados">
                         <!-- <img class="card-img-top" src="{{}}" alt="Card image cap"> -->
-                        <div class="card-block">
+                        <div class="card-block" style="text-align:  center;">
                             <h4 class="card-title">{{grupoCr.name}}</h4>
                             <p class="card-text"><lanbel>Criador: {{grupoCr.creator.name}}</p>
                             <p class="card-text"><lanbel>Menbros: {{grupoCr.quantityMembers ? grupoCr.quantityMembers : 0}}</p>
@@ -24,9 +27,9 @@
                 </div>
 
                 <div class="col-md-5">
-                    <div class="card" style="width: 20rem;" ng-repeat="grupoPart in participate">
+                    <div class="card" style="width: 20rem;border-radius:  15px;background-color: #eee;padding-top: 10px;padding-bottom: 10px;" ng-repeat="grupoPart in participate">
                         <!-- <img class="card-img-top" src="{{}}" alt="Card image cap"> -->
-                        <div class="card-block">
+                        <div class="card-block" style="text-align:  center;">
                             <h4 class="card-title">{{grupoPart.name}}</h4>
                             <p class="card-text"><lanbel>Criador: {{grupoPart.creator.name}}</p>
                             <p class="card-text"><lanbel>Menbros: {{grupoPart.quantityMembers ? grupoPart.quantityMembers : 0}}</p>

@@ -21,8 +21,13 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="col-md-12 thumbnail" style="min-height: 150px !important;">
-                    <div ng-repeat="issue in group.issues">
+                <div class="col-md-12 thumbnail list-group" style="min-height: 150px !important;">
+                    <a href="#" style="color: inherit; " ng-repeat="issue in group.issues">
+                            <!-- <div class="list-group">
+                                    <a href="#" class="list-group-item">First item</a>
+                                    <a href="#" class="list-group-item">Second item</a>
+                                    <a href="#" class="list-group-item">Third item</a>
+                                  </div> -->
                         <div class="row position-name-user">
                             <h4 class="position-name-user" style="margin-bottom: 0px;">{{issue.name}}</h4><br>
                             <h6 class="col-md-12 position-name-user" style="margin-left: 0px;padding-left: 10px;">Qtd. Comentário: {{issue.quantity_comments}}</h6>
@@ -30,7 +35,8 @@
                         <div class="row col-md-12" style="margin-left: 1%">
                             <p>{{post.text}}</p>
                         </div>
-                    </div>
+
+                    </a>
                 </div>
             </div>
         </div>
