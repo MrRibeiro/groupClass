@@ -1,4 +1,4 @@
-@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import "../../bower_components/font-awesome/css/font-awesome.css";
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -15,20 +15,47 @@
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-  background-color: #6C9F7F !important;
-  border-color: #6C9F7F !important;
+  background-color: #4CAF50 !important;
+  border-color: #4CAF50 !important;
 }
 
 .input-busca-menu {
-  margin-top: 4%;
+  margin-top: 2%;
 }
 
 .menu-top {
-  background-color: #6C9F7F !important;
-  border-bottom: 5px solid #6C9F7F !important;
+  background-color: #4CAF50 !important;
+  border-bottom: 5px solid #4CAF50 !important;
 }
 
 .tela-cheia {
   padding-left: 0px;
   padding-right: 0px;
+}
+
+.profileImage-menu{
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+}
+
+.vertical-menu {
+    width: 200px;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
 }

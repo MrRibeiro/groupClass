@@ -1,0 +1,38 @@
+<div class="container-fluid tela-cheia">
+
+  <div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <menu-left objeto="dataHome"></menu-left>
+    </div>
+
+    <div class="col-md-6">
+      <div class="col-md-12">
+        <div class="thumbnail">
+            <div class="caption">
+              <textarea ng-model="text" id="text-post"></textarea>
+              <button type="submit" ng-click="publicar()" class="btn btn-primary">Publicar</button>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-md-12" ng-repeat="post in dataHome.posts | orderBy:'-creation'">
+        <div class="thumbnail">
+          <img class="pull-right" class="profileImage-menu" ng-src="{{ post.creator.imagePath }}">
+          <div class="caption">
+            <h3>{{post.creator.name}}</h3>
+            <p>{{post.text}}</p>
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <menu-right objeto="dataHome.favoriteIssues"></menu-right>
+    </div>
+  </div>
+</div>

@@ -17,8 +17,8 @@
       });
     $routeProvider
       .when('/home', {
-        templateUrl: 'app/main/home/main.html',
-        controller: 'MainController',
+        templateUrl: 'app/main/home/home.html',
+        controller: 'HomeController',
         controllerAs: 'main'
       })
       .otherwise({

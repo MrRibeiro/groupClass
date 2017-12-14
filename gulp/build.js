@@ -39,7 +39,6 @@ gulp.task('html', ['inject', 'partials'], function () {
   var cssFilter = $.filter('**/*.css', { restore: true });
 
   return gulp.src(path.join(conf.paths.tmp, '/serve/*.html'))
-    .pipe($.replace('../bower_components/font-awesome/fonts', '../fonts'))
     .pipe($.inject(partialsInjectFile, partialsInjectOptions))
     .pipe($.useref())
     .pipe(jsFilter)
@@ -65,7 +64,8 @@ gulp.task('html', ['inject', 'partials'], function () {
     }))
     .pipe(htmlFilter.restore)
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')))
-    .pipe($.size({ title: path.join(conf.paths.dist, '/'), showFiles: true }));
+    .pipe($.size({ title: path.join(conf.paths.dist, '/'), showFiles: true }))
+    .pipe($.replace('../bower_components/font-awesome/fonts', '../fonts'));
   });
 
 // Only applies for fonts from bower dependencies

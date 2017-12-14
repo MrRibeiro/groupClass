@@ -3,26 +3,26 @@
   
     angular
       .module('ifsocial')
-      .directive('menuLeft', menuLeft);
+      .directive('menuRight', menuRight);
   
     /** @ngInject */
-    function menuLeft() {
+    function menuRight() {
         var directive = {
             restrict: 'E',
-            templateUrl: 'app/components/menuleft/menuleft.html',
+            templateUrl: 'app/components/menuRight/menuRight.html',
             scope: {
                 objeto: '='
             },
-            controller: MenuLeftController,
+            controller: MenuRightController,
             controllerAs: 'vm',
             bindToController: true
         };
         return directive;
         
         /** @ngInject */
-        function MenuLeftController(moment) {
+        function MenuRightController(moment) {
             var vm = this;
-           
+            console.log(vm);
         }
     }
 })();

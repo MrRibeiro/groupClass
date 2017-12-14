@@ -14,15 +14,13 @@
                 registration: 333333,
                 password: "123"
             }
-            $http.get('https://pacific-stream-91568.herokuapp.com/user/login', config).then(
+            $http.post('https://pacific-stream-91568.herokuapp.com/user/login', config).then(
                 function(resposta){
                     console.log(resposta);
+                    $window.location.href = '#/home';
                 }, function(resposta){
                     console.log(resposta);
                 });
-
-            $window.location.href = '#/home';
-            //$rootScope.changeLocation('pagina-inicial');
         }
     }
 })();
